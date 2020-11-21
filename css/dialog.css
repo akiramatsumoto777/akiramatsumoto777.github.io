@@ -1,0 +1,29 @@
+.dialog {
+  overflow: hidden;
+  position: absolute;
+  top: 10%;
+  height: 600px;
+  width: 1000px;
+  display: none;
+  border: 1px solid #aaa;
+  z-index: 1000;
+}
+
+.dialog-header {
+  overflow: hidden;
+  padding: 5px;
+}
+.dialog-title {
+  float: left;
+}
+.dialog-close {
+  float: right;
+}
+.dialog-content {
+  position: relative;
+  border: 0;
+  padding: 0.5em 1em;
+  overflow: auto;
+  width: auto;
+  height: auto;
+}
