@@ -1,14 +1,16 @@
 .dialog {
   overflow: hidden;
   position: absolute;
-  top: 10%;
+  top: 2%;
   height: 600px;
   width: 1000px;
-  display: none;
   border: 1px solid #aaa;
   z-index: 1000;
 }
 
+.is-hide {
+  display: none;
+}
 .dialog-header {
   overflow: hidden;
   padding: 5px;

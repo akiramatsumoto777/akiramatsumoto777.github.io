@@ -1,20 +1,25 @@
-$(function() {
+// init
+$(function(){
 
-  $("#open-chart-dialog").on("click", function () {
-    //leftの値 = (ウィンドウ幅 -コンテンツ幅) ÷ 2
+  $(".open-chart-dialog").on("click", async function () {
+    /*
+      $(this).attr("id-no") でAjaxでデータを取得し、グラフ書き換え
+    */
+   await drowChart();
+
+    //left = (Window width - Contents Width) / 2
     var leftPosition = (($(window).width() - $("#chart-dialog").outerWidth(true)) / 2);
     $("#chart-dialog").css({ "left": leftPosition + "px" });
-    $("#chart-dialog").show();
+    $("#chart-dialog").show(300);
   });
   $(".dialog-close").on("click", function () {
-    $(this).parents(".dialog").hide();
+    $(this).parents(".dialog").hide(300);
   });
-
-  drowChart();
-
+    
 });
 
-function drowChart() {
+// function
+async function drowChart() {
     var ctx = document.getElementById("chartCanvas");
     var chartCanvas = new Chart(ctx, {
       type: 'line',
