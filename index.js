@@ -7,8 +7,9 @@ let captureFlg = 0;
 
 
 async function getAudioStream() {
+    let audioStream;
     try {
-        const audioStream = await navigator.mediaDevices.getUserMedia({
+        audioStream = await navigator.mediaDevices.getUserMedia({
             video: false,
             audio: true
         });
@@ -19,8 +20,9 @@ async function getAudioStream() {
 }
 
 async function getVideoStream() {
+    let videoStream;
     try {
-        const videoStream = await navigator.mediaDevices.getDisplayMedia({
+        videoStream = await navigator.mediaDevices.getDisplayMedia({
             video: true,
             audio: false
         });
@@ -31,8 +33,9 @@ async function getVideoStream() {
 }
 
 async function getCameraStream() {
+    let videoStream;
     try {
-        const videoStream = await navigator.mediaDevices.getUserMedia({
+        videoStream = await navigator.mediaDevices.getUserMedia({
             video: true,
             audio: false
         });
