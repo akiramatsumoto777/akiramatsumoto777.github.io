@@ -84,7 +84,6 @@ $(function() {
         try {
             // mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/mp4' });
             mediaRecorder = new MediaRecorder(combinedStream);
-            alert(mediaRecorder.mimeType);
         } catch (err) {
             alert(err);
         }
@@ -102,6 +101,8 @@ $(function() {
         mediaRecorder.stop();
     });
     $('#download').click(async function() {
+        alert(mediaRecorder.mimeType);
+//        const blob = new Blob(recordedBlobs, { type: mediaRecorder.mimeType });
         const blob = new Blob(recordedBlobs, { type: "video/webm" });
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
