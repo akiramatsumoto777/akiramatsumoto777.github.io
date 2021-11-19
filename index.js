@@ -7,26 +7,38 @@ let captureFlg = 0;
 
 
 async function getAudioStream() {
-    const audioStream = await navigator.mediaDevices.getUserMedia({
-        video: false,
-        audio: true
-    });
+    try {
+        const audioStream = await navigator.mediaDevices.getUserMedia({
+            video: false,
+            audio: true
+        });
+    } catch (err) {
+        alert(err);
+    }
     return audioStream;
 }
 
 async function getVideoStream() {
-    const videoStream = await navigator.mediaDevices.getDisplayMedia({
-        video: true,
-        audio: false
-    });
+    try {
+        const videoStream = await navigator.mediaDevices.getDisplayMedia({
+            video: true,
+            audio: false
+        });
+    } catch (err) {
+        alert(err);
+    }
     return videoStream;
 }
 
 async function getCameraStream() {
-    const videoStream = await navigator.mediaDevices.getUserMedia({
-        video: true,
-        audio: false
-    });
+    try {
+        const videoStream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: false
+        });
+    } catch (err) {
+        alert(err);
+    }
     return videoStream;
 }
 
