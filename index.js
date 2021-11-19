@@ -65,6 +65,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
+        alert('atach video.');
         const localVideo = document.querySelector("video");
 
         audioStream = await getAudioStream();
