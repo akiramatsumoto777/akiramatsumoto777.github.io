@@ -22,6 +22,14 @@ async function getVideoStream() {
     return videoStream;
 }
 
+async function getCameraStream() {
+    const videoStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: false
+    });
+    return videoStream;
+}
+
 
 $(function() {
     $('#atach_disp_only').click(async function() {
@@ -37,6 +45,15 @@ $(function() {
 
         audioStream = await getAudioStream();
         videoStream = await getVideoStream();
+
+        localVideo.srcObject = videoStream;
+        captureFlg = 2;
+    });
+    $('#atach_camera_audio').click(async function() {
+        const localVideo = document.querySelector("video");
+
+        audioStream = await getAudioStream();
+        videoStream = await getCameraStream();
 
         localVideo.srcObject = videoStream;
         captureFlg = 2;
