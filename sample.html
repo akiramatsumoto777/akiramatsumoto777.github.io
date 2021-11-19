@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="jp">
 <head>
-  <title>サンプル</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+  <title>テスト</title>
 </head>
 <body>
-  <p>テスト2</p>
+  <div id="container">
+
+    <h1>テスト</h1>
+
+    <video autoplay playsinline width="800" height="600"></video>
+
+    <div>
+      <button id="atach_disp_only">アタッチ(画面のみ)</button>
+      <button id="atach_disp_audio">アタッチ(画面＋音声)</button>
+      <button id="record_start">録画</button>
+      <button id="record_stop">ストップ</button>
+      <button id="download">ダウンロード</button>
+    </div>
+
+  <script src="./index.js" async></script>
+
+  </div>
 </body>
 </html>
