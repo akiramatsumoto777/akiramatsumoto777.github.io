@@ -65,7 +65,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('atach video.');
+        alert('atach video1.');
         const localVideo = document.querySelector("video");
 
         audioStream = await getAudioStream();
@@ -86,6 +86,7 @@ $(function() {
         combinedStream = new MediaStream(tracks);
         alert('pass3.');
         mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/webm;codecs=h264' });
+        alert('pass4.');
         mediaRecorder.addEventListener('dataavailable', (event) => {
             if (event.data && event.data.size > 0) {
                 recordedBlobs.push(event.data);
