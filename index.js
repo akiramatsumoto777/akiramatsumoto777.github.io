@@ -65,7 +65,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('atach video2.');
+        alert('atach video3.');
         const localVideo = document.querySelector("video");
 
         audioStream = await getAudioStream();
@@ -84,16 +84,16 @@ $(function() {
         try {
             // mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/mp4' });
             mediaRecorder = new MediaRecorder(combinedStream);
+            alert(mediaRecorder.mimeType);
         } catch (err) {
             alert(err);
         }
 
-        alert('pass4.');
         mediaRecorder.addEventListener('dataavailable', (event) => {
             if (event.data && event.data.size > 0) {
                 recordedBlobs.push(event.data);
-            }
             alert('event pass');
+            }
         });
         mediaRecorder.start(500);
         alert('rec start.');
@@ -123,7 +123,6 @@ function getTracks() {
         tracks = [...videoStream.getTracks()];
 
     } else if (captureFlg == 2) {
-        alert('videoStream.getTracks():' + videoStream.getTracks());
         tracks = [...videoStream.getTracks(), ...audioStream.getTracks()];
     }
     return tracks;
