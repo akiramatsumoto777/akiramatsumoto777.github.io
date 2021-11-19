@@ -82,7 +82,8 @@ $(function() {
         let tracks = getTracks();
         combinedStream = new MediaStream(tracks);
         try {
-            mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/mp4' });
+            // mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/mp4' });
+            mediaRecorder = new MediaRecorder(combinedStream);
         } catch (err) {
             alert(err);
         }
