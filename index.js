@@ -85,7 +85,12 @@ $(function() {
         // combinedStream = new MediaStream([...videoStream.getTracks(), ...audioStream.getTracks()])
         combinedStream = new MediaStream(tracks);
         alert('pass3.');
-        mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/webm;codecs=h264' });
+        try {
+            mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/webm;codecs=h264' });
+        } catch (err) {
+            alert(err);
+        }
+
         alert('pass4.');
         mediaRecorder.addEventListener('dataavailable', (event) => {
             if (event.data && event.data.size > 0) {
