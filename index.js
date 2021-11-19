@@ -75,9 +75,12 @@ $(function() {
 $(function() {
     $('#record_start').click(async function() {
         recordedBlobs = [];
+        alert('pass1.');
         let tracks = getTracks();
+        alert('pass2.');
         // combinedStream = new MediaStream([...videoStream.getTracks(), ...audioStream.getTracks()])
         combinedStream = new MediaStream(tracks);
+        alert('pass3.');
         mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/webm;codecs=h264' });
         mediaRecorder.addEventListener('dataavailable', (event) => {
             if (event.data && event.data.size > 0) {
@@ -113,6 +116,7 @@ function getTracks() {
         tracks = [...videoStream.getTracks()];
 
     } else if (captureFlg == 2) {
+        alert('videoStream.getTracks():' + videoStream.getTracks());
         tracks = [...videoStream.getTracks(), ...audioStream.getTracks()];
     }
     return tracks;
