@@ -65,7 +65,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('atach video7.');
+        alert('case 8.');
         const localVideo = document.querySelector("video");
 
         audioStream = await getAudioStream();
@@ -78,6 +78,7 @@ $(function() {
 
 $(function() {
     $('#record_start').click(async function() {
+        alert('rec start start.');
         recordedBlobs = [];
         let tracks = getTracks();
         combinedStream = new MediaStream(tracks);
@@ -94,10 +95,12 @@ $(function() {
             }
         });
         mediaRecorder.start(500);
-        alert('rec start.');
+        alert('rec start end.');
     });
     $('#record_stop').click(async function() {
+        alert('record stop start');
         mediaRecorder.stop();
+        alert('record stop end');
     });
     $('#download').click(async function() {
         alert(mediaRecorder.mimeType);
@@ -107,7 +110,7 @@ $(function() {
         const a = document.createElement("a");
         a.style.display = "none";
         a.href = url;
-        a.download = "movie";
+        a.download = "movie.mp4";
         document.body.appendChild(a);
         a.click();
         setTimeout(() => {
