@@ -32,12 +32,12 @@ async function getVideoStream() {
     return videoStream;
 }
 
-async function getCameraStream() {
+async function getCameraAudioStream() {
     let videoStream;
     try {
         videoStream = await navigator.mediaDevices.getUserMedia({
             video: true,
-            audio: false
+            audio: true
         });
     } catch (err) {
         alert(err);
@@ -65,14 +65,13 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('case 8.');
+        alert('case 9.');
         const localVideo = document.querySelector("video");
 
-        audioStream = await getAudioStream();
-        videoStream = await getCameraStream();
+        videoStream = await getCameraAudioStream();
 
         localVideo.srcObject = videoStream;
-        captureFlg = 2;
+        captureFlg = 1;
     });
 });
 
