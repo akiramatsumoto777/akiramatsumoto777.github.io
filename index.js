@@ -79,14 +79,10 @@ $(function() {
 $(function() {
     $('#record_start').click(async function() {
         recordedBlobs = [];
-        alert('pass1.');
         let tracks = getTracks();
-        alert('pass2.');
-        // combinedStream = new MediaStream([...videoStream.getTracks(), ...audioStream.getTracks()])
         combinedStream = new MediaStream(tracks);
-        alert('pass3.');
         try {
-            mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/webm;codecs=h264' });
+            mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/mp4' });
         } catch (err) {
             alert(err);
         }
