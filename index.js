@@ -81,11 +81,12 @@ $(function() {
         mediaRecorder = new MediaRecorder(combinedStream, { mimeType: 'video/webm;codecs=h264' });
         mediaRecorder.addEventListener('dataavailable', (event) => {
             if (event.data && event.data.size > 0) {
-                console.log('pass');
                 recordedBlobs.push(event.data);
             }
+            alert('event pass');
         });
         mediaRecorder.start(500);
+        alert('rec start.');
     });
     $('#record_stop').click(async function() {
         mediaRecorder.stop();
