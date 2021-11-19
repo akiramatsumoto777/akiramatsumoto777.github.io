@@ -65,7 +65,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('atach video4.');
+        alert('atach video7.');
         const localVideo = document.querySelector("video");
 
         audioStream = await getAudioStream();
@@ -91,7 +91,6 @@ $(function() {
         mediaRecorder.addEventListener('dataavailable', (event) => {
             if (event.data && event.data.size > 0) {
                 recordedBlobs.push(event.data);
-            alert('event pass');
             }
         });
         mediaRecorder.start(500);
@@ -108,7 +107,7 @@ $(function() {
         const a = document.createElement("a");
         a.style.display = "none";
         a.href = url;
-        a.download = "rec.webm";
+        a.download = "movie";
         document.body.appendChild(a);
         a.click();
         setTimeout(() => {
