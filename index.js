@@ -36,7 +36,8 @@ async function getCameraAudioStream() {
     let videoStream;
     try {
         videoStream = await navigator.mediaDevices.getUserMedia({
-            video: true,
+//             video: true,
+            video: { facingMode: 'user' } ,
             audio: true
         });
     } catch (err) {
