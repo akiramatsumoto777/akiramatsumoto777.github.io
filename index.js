@@ -37,7 +37,8 @@ async function getCameraAudioStream() {
     try {
         videoStream = await navigator.mediaDevices.getUserMedia({
 //             video: true,
-            video: { facingMode: 'user' } ,
+//             video: { facingMode: 'user' } ,
+            video: { facingMode: { exact: "environment" } } ,
             audio: true
         });
     } catch (err) {
@@ -66,7 +67,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('case 10.');
+        alert('case 11.');
         const localVideo = document.querySelector("video");
 
         videoStream = await getCameraAudioStream();
