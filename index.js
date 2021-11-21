@@ -109,15 +109,17 @@ $(function() {
         const blob = new Blob(recordedBlobs, { type: mediaRecorder.mimeType });
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
-        a.style.display = "none";
+        a.style.display = "block";
         a.href = url;
         a.download = "movie.mp4";
         document.body.appendChild(a);
+        /*
         a.click();
         setTimeout(() => {
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
         }, 100);
+        */
     });
 });
 
