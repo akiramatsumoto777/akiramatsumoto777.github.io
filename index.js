@@ -67,7 +67,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('case 22.');
+        alert('case 23.');
         const localVideo = document.querySelector("video");
 
         videoStream = await getCameraAudioStream();
@@ -112,6 +112,7 @@ $(function() {
         a.style.display = "block";
         a.href = url;
         a.download = "movie.mp4";
+        a.innerHTML = 'chrom用ダウンロードリンク';
         document.body.appendChild(a);
         /*
         a.click();
