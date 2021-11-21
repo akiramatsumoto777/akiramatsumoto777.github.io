@@ -68,7 +68,7 @@ $(function() {
         captureFlg = 2;
     });
     $('#atach_camera_audio').click(async function() {
-        alert('case 26.');
+        alert('case 27.');
         const localVideo = document.querySelector("video");
 
         videoStream = await getCameraAudioStream();
@@ -123,7 +123,7 @@ $(function() {
         }, 100);
         */
         const previewVideo = document.querySelector("#previewVideo");
-        previewVideo.srcObject = url;
+        previewVideo.src = url;
 
         
     });
