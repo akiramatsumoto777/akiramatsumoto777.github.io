@@ -58,7 +58,8 @@ $(function() {
         captureFlg = 1;
     });
     $('#atach_disp_audio').click(async function() {
-        const localVideo = document.querySelector("video");
+//         const localVideo = document.querySelector("video");
+        const localVideo = document.querySelector("#atachVideo");
 
         audioStream = await getAudioStream();
         videoStream = await getVideoStream();
@@ -112,7 +113,7 @@ $(function() {
         a.style.display = "block";
         a.href = url;
         a.download = "movie.mp4_";
-        a.innerHTML = 'chrom用ダウンロードリンク';
+        a.innerHTML = 'ダウンロードリンク';
         document.body.appendChild(a);
         /*
         a.click();
@@ -121,6 +122,10 @@ $(function() {
             window.URL.revokeObjectURL(url);
         }, 100);
         */
+        const previewVideo = document.querySelector("#previewVideo");
+        previewVideo.srcObject = videoStream;
+
+        
     });
 });
 
