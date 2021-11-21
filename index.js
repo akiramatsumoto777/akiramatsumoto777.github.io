@@ -111,7 +111,7 @@ $(function() {
         const a = document.createElement("a");
         a.style.display = "block";
         a.href = url;
-        a.download = "movie.mp4";
+        a.download = "movie.mp4_";
         a.innerHTML = 'chrom用ダウンロードリンク';
         document.body.appendChild(a);
         /*
