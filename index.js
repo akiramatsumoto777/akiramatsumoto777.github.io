@@ -1,3 +1,24 @@
+window.addEventListener('compositionstart', e => {
+    isComposing = false;
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].disabled = true;
+        elements[i].style.backgroundColor = '#ff0000';
+    }
+    console.log("編集中");
+});
+
+window.addEventListener('compositionend', e => {
+    isComposing = true;
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].disabled = false;
+        elements[i].style.backgroundColor = '#ff9900';
+    }
+    console.log("確定");
+});
+
+
+
+
 let audioStream;
 let videoStream;
 let combinedStream;
