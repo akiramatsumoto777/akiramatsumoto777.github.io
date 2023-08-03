@@ -58,6 +58,22 @@ window.addEventListener('compositionend', e => {
     }
     console.log("確定");
 });
+
+setInterval(() => {
+    // document.dispatchEvent( new KeyboardEvent( "keyup",{key: "Enter" })) ;
+    // document.dispatchEvent( new KeyboardEvent( "keyup",{keyCode: 13 })) ;
+    // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keyup",{keyCode: 229 })) ;
+    // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keyup",{keyCode: 13 })) ;
+    // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown",{keyCode: 229 })) ;
+    // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown",{keyCode: 13 })) ;
+    // let kEvent = new KeyboardEvent( "keydown",{keyCode: 65 });
+    let kEvent = new KeyboardEvent( "keyup", {key: "Enter" });
+    document.getElementById('text-search').dispatchEvent(kEvent) ;
+    // let kEvent = new KeyboardEvent( "keyup",{key: "a" });
+    // document.getElementById('text-search').dispatchEvent(kEvent) ;
+    console.log("Enter");
+}, 5000);
+
 </script>
 
 </body>
