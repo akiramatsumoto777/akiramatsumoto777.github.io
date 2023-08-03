@@ -67,7 +67,7 @@ setInterval(() => {
     // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown",{keyCode: 229 })) ;
     // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown",{keyCode: 13 })) ;
     // let kEvent = new KeyboardEvent( "keydown",{keyCode: 65 });
-    let kEvent = new KeyboardEvent( "keyup", {key: "Enter" });
+    let kEvent = new KeyboardEvent("keydown",{keyCode: 65 }});
     document.getElementById('text-search').dispatchEvent(kEvent) ;
     // let kEvent = new KeyboardEvent( "keyup",{key: "a" });
     // document.getElementById('text-search').dispatchEvent(kEvent) ;
