@@ -67,18 +67,21 @@ setInterval(() => {
     // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown",{keyCode: 229 })) ;
     // document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown",{keyCode: 13 })) ;
     // let kEvent = new KeyboardEvent( "keydown",{keyCode: 65 });
-    let kEvent = new KeyboardEvent("keydown",{
-        which: 53,
-        keyCode: 53,
-        shiftKey: false,
-        altKey: false,
-        ctrlKey: false,
-        metaKey: false,
-        key: 5
-    });
-    document.getElementById('text-search').dispatchEvent(kEvent) ;
+    // let kEvent = new KeyboardEvent("keydown",{
+    //     which: 53,
+    //     keyCode: 53,
+    //     shiftKey: false,
+    //     altKey: false,
+    //     ctrlKey: false,
+    //     metaKey: false,
+    //     key: 5
+    // });
+    // document.getElementById('text-search').dispatchEvent(kEvent) ;
     // let kEvent = new KeyboardEvent( "keyup",{key: "a" });
     // document.getElementById('text-search').dispatchEvent(kEvent) ;
+    document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown", { keyCode: 40 }));
+    document.getElementById('text-search').dispatchEvent( new KeyboardEvent( "keydown", { keyCode: 65 }));
+
     console.log("Enter");
 }, 5000);
 
